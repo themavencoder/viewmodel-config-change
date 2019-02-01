@@ -1,9 +1,11 @@
 package com.aloine.viewmodelconfig
 
+import android.arch.lifecycle.AndroidViewModel
+import android.arch.lifecycle.ViewModel
 import android.util.Log
 import java.util.*
 
-class MainActivityDataGenerator {
+class MainActivityDataGenerator : ViewModel() {
 
     private lateinit var myRandomNumber: String
 
