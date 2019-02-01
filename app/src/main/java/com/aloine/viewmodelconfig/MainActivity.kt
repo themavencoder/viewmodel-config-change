@@ -7,14 +7,14 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var data: MainActivityDataGenerator
+    lateinit var model: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       // data = MainActivityDataGenerator()
-        data = ViewModelProviders.of(this).get(MainActivityDataGenerator::class.java)
-        val myRandomNumber = data.getNumber()
+       // model = MainActivityDataGenerator()
+        model = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
+        val myRandomNumber = model.getNumber()
         textview_random_number.text = myRandomNumber
         Log.i(TAG, "Random Number set")
 

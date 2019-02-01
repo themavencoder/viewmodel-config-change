@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModel
 import android.util.Log
 import java.util.*
 
-class MainActivityDataGenerator : ViewModel() {
+class MainActivityViewModel : ViewModel() {
 
     private lateinit var myRandomNumber: String
 
@@ -28,6 +28,12 @@ class MainActivityDataGenerator : ViewModel() {
     }
 
     companion object {
-        private val TAG : String? = MainActivityDataGenerator::class.simpleName
+        private val TAG : String? = MainActivityViewModel::class.simpleName
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.i(TAG, "View model destroyed")
+    }
+
 }
